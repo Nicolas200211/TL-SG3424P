@@ -12,11 +12,56 @@ async function loadComponent(elementId, filePath) {
     }
 }
 
+// Mobile scroll behavior for contact info
+function setupMobileScrollBehavior() {
+    const contactInfo = document.querySelector('.contact-info');
+    if (!contactInfo) return;
+    
+    let lastScrollTop = 0;
+    const mobileBreakpoint = 767; // Match this with your CSS breakpoint
+    let isMobile = window.innerWidth <= mobileBreakpoint;
+    
+    // Check if we're on mobile
+    const checkMobile = () => {
+        isMobile = window.innerWidth <= mobileBreakpoint;
+        if (!isMobile) {
+            contactInfo.classList.remove('hide-on-scroll');
+        }
+    };
+    
+    // Handle scroll event
+    const handleScroll = () => {
+        if (!isMobile) return;
+        
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && scrollTop > 50) {
+            // Scrolling down
+            contactInfo.classList.add('hide-on-scroll');
+        } else {
+            // Scrolling up or at top
+            contactInfo.classList.remove('hide-on-scroll');
+        }
+        
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+    };
+    
+    // Add event listeners
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', checkMobile);
+    
+    // Initial check
+    checkMobile();
+}
+
 // Load all components when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Load header and footer
     loadComponent('header', 'includes/header.html');
     loadComponent('footer', 'includes/footer.html');
+    
+    // Setup mobile scroll behavior
+    setupMobileScrollBehavior();
     
     // Load product components
     loadComponent('product-header', 'includes/product-header.html');

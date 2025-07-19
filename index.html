@@ -13,45 +13,140 @@
     <link rel="stylesheet" href="TL-SG3424P.css">
     <link rel="stylesheet" href="responsive.css" media="screen">
     <link rel="icon" type="image/png" href="https://www.ds3comunicaciones.com/favicon.ico">
+
 </head>
 
 <body>
+    <!-- Header Section -->
     <header class="main-header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="images/logo1.gif" alt="DS3 Comunicaciones" class="logo-img">
-                    </a>
-                </div>
-                <div class="header-actions">
-                    <div class="contact-info">
-                        <span><i class="fas fa-phone-alt"></i> (01) 123-4567</span>
-                        <span><i class="fas fa-envelope"></i> ventas@ds3comunicaciones.com</span>
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo-container">
+                <a href="/">
+                    <img src="https://www.ds3comunicaciones.com/mikrotik/images/Logo1.jpg" alt="DS3 Comunicaciones Logo" class="logo">
+                </a>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-gray-800">
+                    <div class="flex items-center group">
+                        <i class="fas fa-phone-alt mr-2 text-blue-600 group-hover:text-blue-700 transition-colors"></i>
+                        <div class="text-left">
+                            <a href="tel:015334339" class="block text-sm font-medium hover:text-blue-600 transition-colors">(01) 533-4339</a>
+                            <p class="text-xs text-gray-500 whitespace-nowrap">Lun - Vie: 9:00 - 18:00</p>
+                        </div>
                     </div>
-                    <div class="cart">
-                        <a href="#" class="cart-btn">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-count">0</span>
-                        </a>
+                    <div class="h-6 w-px bg-gray-200 mx-1"></div>
+                    <div class="flex items-center group">
+                        <i class="fas fa-mobile-alt mr-2 text-blue-600 group-hover:text-blue-700 transition-colors"></i>
+                        <div class="text-left">
+                            <a href="https://wa.me/51994428965" target="_blank" class="block text-sm font-medium hover:text-blue-600 transition-colors">994-428-965</a>
+                            <p class="text-xs text-gray-500">WhatsApp</p>
+                        </div>
+                    </div>
+                    <div class="h-6 w-px bg-gray-200 mx-1"></div>
+                    <div class="flex items-center group">
+                        <i class="fas fa-envelope mr-2 text-blue-600 group-hover:text-blue-700 transition-colors"></i>
+                        <a href="mailto:netperu100@hotmail.com" class="text-sm font-medium hover:text-blue-600 transition-colors">netperu100@hotmail.com</a>
                     </div>
                 </div>
             </div>
+            
+            <!-- Search and Location -->
+            <div class="header-actions">
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Lima, PERÚ</span>
+                </div>
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar productos...">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="hidden lg:block">
+                    <a href="https://www.cisco.com/" target="_blank" rel="noopener noreferrer">
+                      <img 
+                        src="https://www.ds3comunicaciones.com/cisco/images/cisco-gif.gif" 
+                        alt="Cisco Partner" 
+                        class="h-8 sm:h-10 hover:opacity-90 transition-opacity"
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
+            </div>
         </div>
+        
     </header>
 
-    <nav class="breadcrumb">
-        <div class="container">
-            <ul>
-                <li><a href="https://www.ds3comunicaciones.com">Inicio</a></li>
-                <li><i class="fas fa-chevron-right"></i></li>
-                <li><a href="https://www.ds3comunicaciones.com/switch">Switches</a></li>
-                <li><i class="fas fa-chevron-right"></i></li>
-                <li><a href="https://www.ds3comunicaciones.com/switch/tp-link">TP-Link</a></li>
-                <li><i class="fas fa-chevron-right"></i></li>
-                <li class="current">TL-SG3424P</li>
-            </ul>
+    <!-- Submenú de Navegación por Categorías -->
+  <nav class="category-nav">
+    <div class="nav-container">
+      <div class="nav-inner">
+        <div class="nav-scroll">
+          <!-- Categoría 1 -->
+          <a href="https://www.ds3comunicaciones.com/cisco/catalys_9200l.html" class="nav-category">
+            <img src="./cisco/icons/SwitchCatalyst.png" class="nav-icon" alt="Switch Catalyst" />
+            <span>Switch Catalyst</span>
+          </a>
+
+          <!-- Categoría 2 -->
+          <a href="https://www.ds3comunicaciones.com/cisco/bussines_sg350.html" class="nav-category">
+            <img src="./cisco/icons/Cisco%20Business.ico" class="nav-icon" alt="Cisco Business" />
+            <span>Cisco Business</span>
+          </a>
+
+          <!-- Categoría 3 -->
+          <a href="https://www.ds3comunicaciones.com/cisco/precios_cisco_switch_industrial_b.html" class="nav-category">
+            <img src="./cisco/icons/Switch%20Industrial.ico" class="nav-icon" alt="Switch Industrial" />
+            <span>Switch Industrial</span>
+          </a>
+
+          <!-- Categoría 4 -->
+          <a href="https://www.ds3comunicaciones.com/cisco/precios_cisco_access_point_b.html" class="nav-category">
+            <div class="icon-container">
+              <img src="./cisco/icons/Aironet.ico" class="nav-icon" alt="Aironet" />
+            </div>
+            <span>Aironet</span>
+          </a>
+
+          <!-- Categoría 5 -->
+          <a href="https://www.ds3comunicaciones.com/cisco/precios_cisco_telefonos_b.html" class="nav-category">
+            <img src="./cisco/icons/Télefono.ico" class="nav-icon" alt="Teléfono" />
+            <span>Teléfono</span>
+          </a>
+
+          <!-- Categoría 6 -->
+          <a href="https://ds3comunicaciones.com/cisco/precios_cisco_meraki_b.html" class="nav-category">
+            <img src="./cisco/icons/mariakii.ico" class="nav-icon" alt="Meraki" />
+            <span>Meraki</span>
+          </a>
+
+          <!-- Categoría 7 -->
+          <a href="#" class="nav-category">
+            <img src="./cisco/icons/Transceiver.ico" class="nav-icon" alt="Transceiver" />
+            <span>Transceiver</span>
+          </a>
         </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+
+    <nav class="breadcrumb">
+      <div class="container">
+        <ul class="breadcrumb-list">
+          <li class="breadcrumb-item"><a href="https://www.ds3comunicaciones.com">Inicio</a></li>
+          <li class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></li>
+          <li class="breadcrumb-item"><a href="https://www.ds3comunicaciones.com/switch">Switches</a></li>
+          <li class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></li>
+          <li class="breadcrumb-item"><a href="https://www.ds3comunicaciones.com/switch/tp-link">TP-Link</a></li>
+          <li class="breadcrumb-divider"><i class="fas fa-chevron-right"></i></li>
+          <li class="breadcrumb-item current">TL-SG3424P</li>
+        </ul>
+      </div>
     </nav>
 
     <!-- Main Content -->
@@ -408,66 +503,132 @@
     </main>
 
 
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-widget">
-                    <h3>DS3 Comunicaciones</h3>
-                    <p>Líderes en soluciones de redes y comunicaciones en Perú, ofreciendo productos de calidad y
-                        soporte técnico especializado.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
+  <!-- FOOTER -->
+  <footer class="bg-gray-100 py-8 px-4 sm:px-6 lg:px-8 w-full">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Columna 1: Logo y contacto -->
+        <div class="space-y-4">
+          <img src="https://www.ds3comunicaciones.com/mikrotik/images/Logo1.jpg" alt="DS3 Comunicaciones"
+            class="w-32 h-auto" />
 
-                <div class="footer-widget">
-                    <h3>Enlaces Rápidos</h3>
-                    <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Productos</a></li>
-                        <li><a href="#">Marcas</a></li>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Soporte</a></li>
-                        <li><a href="#">Contacto</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-widget">
-                    <h3>Contacto</h3>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> Av. Javier Prado 1234, Lima, Perú</li>
-                        <li><i class="fas fa-phone-alt"></i> (01) 123-4567</li>
-                        <li><i class="fas fa-envelope"></i> info@ds3comunicaciones.com</li>
-                        <li><i class="fas fa-clock"></i> Lunes a Viernes: 9:00 - 18:00</li>
-                    </ul>
-                </div>
-
-                <div class="footer-widget">
-                    <h3>Boletín Informativo</h3>
-                    <p>Suscríbete para recibir ofertas exclusivas y novedades.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Tu correo electrónico" required>
-                        <button type="submit" class="btn btn-primary">Suscribirse</button>
-                    </form>
-                </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-bold text-gray-800">Redes Sociales</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-600 hover:text-blue-600 transition-colors">
+                <i class="fab fa-facebook-f text-xl"></i>
+              </a>
+              <a href="https://wa.me/994428965?text=Hola necesito ayuda" target="_blank"
+                class="text-gray-600 hover:text-green-600 transition-colors">
+                <i class="fab fa-whatsapp text-xl"></i>
+              </a>
             </div>
+          </div>
 
-            <div class="footer-bottom">
-                <div class="copyright">
-                    &copy; 2023 DS3 Comunicaciones. Todos los derechos reservados.
-                </div>
-                <div class="footer-links">
-                    <a href="#">Términos y Condiciones</a>
-                    <a href="#">Política de Privacidad</a>
-                    <a href="#">Política de Envíos</a>
-                    <a href="#">Garantías</a>
-                </div>
-            </div>
+          <div class="space-y-2">
+            <h3 class="text-lg font-bold text-gray-800">Correo</h3>
+            <a href="mailto:netperu100@hotmail.com"
+              class="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
+              <i class="fas fa-envelope mr-2"></i>
+              netperu100@hotmail.com
+            </a>
+          </div>
         </div>
-    </footer>
+
+        <!-- Columna 2: Soluciones -->
+        <div class="space-y-4">
+          <h3 class="text-lg font-bold text-gray-800">Soluciones</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="https://www.ds3comunicaciones.com/l-com/AccessPoint.html" target="_blank"
+                class="text-gray-600 hover:text-blue-600 hover:underline transition-colors">
+                Access Point
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ds3comunicaciones.com/lcom/AntenasMIMO.html" target="_blank"
+                class="text-gray-600 hover:text-blue-600 hover:underline transition-colors">
+                Antenas MIMO
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ds3comunicaciones.com/l-com/AntenasPanel.html" target="_blank"
+                class="text-gray-600 hover:text-blue-600 hover:underline transition-colors">
+                Antenas de Panel
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ds3comunicaciones.com/l-com/AntenaSectorial.html" target="_blank"
+                class="text-gray-600 hover:text-blue-600 hover:underline transition-colors">
+                Antenas Sectoriales
+              </a>
+            </li>
+            <li>
+              <a href="https://ds3comunicaciones.com/l-com/pigtail/Pigtail.html" target="_blank"
+                class="text-gray-600 hover:text-blue-600 hover:underline transition-colors">
+                Cable Pigtail
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ds3comunicaciones.com/trendnet/MediaConvert.html" target="_blank"
+                class="text-gray-600 hover:text-blue-600 hover:underline transition-colors">
+                Media Converter
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Soporte y más -->
+        <div class="space-y-4">
+          <h3 class="text-lg font-bold text-gray-800">Soporte</h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="https://www.ds3comunicaciones.com/soporte.html" target="_blank"
+                class="text-gray-600 hover:text-blue-600 hover:underline transition-colors">
+                Soporte Técnico
+              </a>
+            </li>
+            <li>
+              <a href="https://ds3comunicaciones.com/us.html" target="_blank"
+                class="text-gray-600 hover:text-blue-600 hover:underline transition-colors">
+                Acerca de Nosotros
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Contacto -->
+        <div class="space-y-4">
+          <h3 class="text-lg font-bold text-gray-800">Contacto</h3>
+          <div class="space-y-3">
+            <a href="https://wa.me/994428965?text=Hola necesito ayuda" target="_blank"
+              class="flex items-center text-gray-600 hover:text-green-600 transition-colors">
+              <i class="fas fa-phone-alt mr-2"></i>
+              <span>994 428 965</span>
+            </a>
+            <a href="https://wa.me/996533223?text=Hola necesito ayuda" target="_blank"
+              class="flex items-center text-gray-600 hover:text-green-600 transition-colors">
+              <i class="fas fa-phone-alt mr-2"></i>
+              <span>996 533 223</span>
+            </a>
+          </div>
+
+          <div class="pt-4">
+            <h3 class="text-lg font-bold text-gray-800 mb-2">
+              Horario de Atención
+            </h3>
+            <p class="text-gray-600">Lunes a Viernes: 9:00 - 18:00</p>
+            <p class="text-gray-600">Sábados: 9:00 - 13:00</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Derechos de autor -->
+      <div class="border-t border-gray-200 mt-8 pt-6 text-center text-gray-500">
+        <p>&copy; 2023 DS3 Comunicaciones. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
 
     <script>
         document.querySelectorAll('.tab-btn').forEach(button => {

@@ -20,6 +20,15 @@
     <!-- Header Section -->
     <header class="main-header">
         <div class="header-container">
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-label="Menú de navegación" aria-expanded="false">
+                <span class="hamburger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </span>
+            </button>
+            
             <!-- Logo -->
             <div class="logo-container">
                 <a href="/">
@@ -628,9 +637,201 @@
         <p>&copy; 2023 DS3 Comunicaciones. Todos los derechos reservados.</p>
       </div>
     </div>
-  </footer>
+    </footer>
+
+    <!-- Sidebar Navigation Menu -->
+    <div class="sidebar-overlay"></div>
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h2 class="sidebar-title">Menú</h2>
+            <button class="sidebar-close" id="close-menu" aria-label="Cerrar menú">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li><a href="http://ds3comunicaciones.com/cisco/precios_cisco_b.html">
+                <i class="fas fa-list"></i>Lista Completa
+            </a></li>
+            <li><a href="http://ds3comunicaciones.com/cisco/precios_cisco_access_point_b.html">
+                <i class="fas fa-wifi"></i>Access Point
+            </a></li>
+            <li><a href="http://ds3comunicaciones.com/cisco/precios_cisco_switch_small_bussines_b.html">
+                <i class="fas fa-network-wired"></i>Switch Small Business
+            </a></li>
+            <li><a href="http://ds3comunicaciones.com/cisco/precios_cisco_switch_catalyst_b.html">
+                <i class="fas fa-sitemap"></i>Switch Catalyst
+            </a></li>
+            <li><a href="http://ds3comunicaciones.com/cisco/precios_cisco_meraki_b.html">
+                <i class="fas fa-cloud"></i>Cisco Meraki
+            </a></li>
+            <li><a href="http://ds3comunicaciones.com/cisco/precios_cisco_nexus_b.html">
+                <i class="fas fa-server"></i>Cisco Nexus
+            </a></li>
+            <li><a href="http://ds3comunicaciones.com/cisco/precios_cisco_router_b.html">
+                <i class="fas fa-route"></i>Routers
+            </a></li>
+            <li><a href="http://ds3comunicaciones.com/cisco/precios_cisco_telefonos_b.html">
+                <i class="fas fa-phone-alt"></i>Teléfonos Cisco
+            </a></li>
+            <li><a href="http://ds3comunicaciones.com/cisco/precios_cisco_modulo_transceiver_fibra_b.html">
+                <i class="fas fa-ethernet"></i>Módulo/Transceiver de Fibra
+            </a></li>
+            <li><a href="http://ds3comunicaciones.com/cisco/precios_cisco_accesorios_b.html">
+                <i class="fas fa-tools"></i>Accesorios
+            </a></li>
+            <li><a href="http://ds3comunicaciones.com/cisco/precios_cisco_switch_industrial_b.html">
+                <i class="fas fa-industry"></i>Switch Industrial
+            </a></li>
+        </ul>
+
+        <!-- Sección de contacto -->
+        <div class="sidebar-footer">
+            <h3 class="sidebar-title">Contacto</h3>
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="tel:015334339">
+                        <i class="fas fa-phone"></i>(01) 533-4339
+                    </a>
+                </li>
+                <li>
+                    <a href="tel:51994428965">
+                        <i class="fab fa-whatsapp"></i>994-428-965
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:netperu100@hotmail.com">
+                        <i class="fas fa-envelope"></i>netperu100@hotmail.com
+                    </a>
+                </li>
+                <li class="sidebar-divider"></li>
+                <li>
+                    <div class="sidebar-contact-info">
+                        <p><strong>Horario de Atención:</strong></p>
+                        <p>Lun-Vie: 9:00 - 18:00</p>
+                        <p>Sáb: 9:00 - 13:00</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-modal-content">
+            <div class="search-modal-header">
+                <h3>Buscar productos</h3>
+                <button class="search-close-btn" aria-label="Cerrar búsqueda">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-modal-body">
+                <div class="search-input-container">
+                    <input type="text" placeholder="Buscar..." class="search-modal-input">
+                    <button type="submit" class="search-modal-submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
+        // Mobile Menu and Search Modal Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Search Modal Elements
+            const searchModal = document.getElementById('searchModal');
+            const searchButtons = document.querySelectorAll('.search-box button, .search-box');
+            const searchCloseBtn = document.querySelector('.search-close-btn');
+            const searchModalInput = document.querySelector('.search-modal-input');
+            
+            // Toggle Search Modal
+            function toggleSearchModal(show) {
+                if (show) {
+                    searchModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    // Focus the input when modal opens
+                    setTimeout(() => {
+                        searchModalInput.focus();
+                    }, 100);
+                } else {
+                    searchModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            // Event Listeners for Search Buttons
+            searchButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    toggleSearchModal(true);
+                });
+            });
+            
+            // Close Modal
+            searchCloseBtn.addEventListener('click', () => toggleSearchModal(false));
+            
+            // Close when clicking outside modal content
+            searchModal.addEventListener('click', (e) => {
+                if (e.target === searchModal) {
+                    toggleSearchModal(false);
+                }
+            });
+            
+            // Close with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && searchModal.classList.contains('active')) {
+                    toggleSearchModal(false);
+                }
+            });
+            
+            // Mobile Menu Elements
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileNav = document.querySelector('.mobile-nav');
+            const mobileOverlay = document.querySelector('.mobile-nav-overlay');
+            const closeButton = document.querySelector('.mobile-close-btn');
+            
+            // Toggle mobile menu
+            function toggleMenu() {
+                const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', !isExpanded);
+                mobileNav.classList.toggle('active');
+                mobileOverlay.classList.toggle('active');
+                
+                // Prevent body scroll when menu is open
+                document.body.style.overflow = isExpanded ? '' : 'hidden';
+            }
+            
+            // Close menu when clicking overlay
+            function closeMenu() {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                mobileNav.classList.remove('active');
+                mobileOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            
+            // Event listeners
+            menuToggle.addEventListener('click', toggleMenu);
+            closeButton.addEventListener('click', toggleMenu);
+            mobileOverlay.addEventListener('click', closeMenu);
+            
+            // Close menu when clicking on a nav link
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    // Small delay to allow the click to register before closing
+                    setTimeout(closeMenu, 100);
+                });
+            });
+            
+            // Close menu when pressing Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeMenu();
+                }
+            });
+        });
+        
+        // Existing tab functionality
         document.querySelectorAll('.tab-btn').forEach(button => {
             button.addEventListener('click', () => {
                 const tabId = button.getAttribute('data-tab');
@@ -677,6 +878,60 @@
     
 
     <script src="js/gallery.js"></script>
+
+    <!-- Script para el menú lateral -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos del DOM
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const closeMenuButton = document.getElementById('close-menu');
+            const sidebar = document.querySelector('.sidebar');
+            const sidebarOverlay = document.querySelector('.sidebar-overlay');
+            const body = document.body;
+
+            // Función para abrir el menú
+            function openMenu() {
+                sidebar.classList.add('active');
+                sidebarOverlay.classList.add('active');
+                body.classList.add('sidebar-open');
+            }
+
+            // Función para cerrar el menú
+            function closeMenu() {
+                sidebar.classList.remove('active');
+                sidebarOverlay.classList.remove('active');
+                body.classList.remove('sidebar-open');
+            }
+
+            // Event Listeners
+            if (menuToggle) {
+                menuToggle.addEventListener('click', openMenu);
+            }
+            
+            if (closeMenuButton) {
+                closeMenuButton.addEventListener('click', closeMenu);
+            }
+            
+            if (sidebarOverlay) {
+                sidebarOverlay.addEventListener('click', closeMenu);
+            }
+
+            // Cerrar menú con tecla Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+
+            // Cerrar menú al hacer clic en un enlace
+            document.querySelectorAll('.sidebar-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    // Pequeño retraso para permitir que el clic se registre antes de cerrar
+                    setTimeout(closeMenu, 100);
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

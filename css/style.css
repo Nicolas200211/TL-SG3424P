@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.scrollbar-hide {
+    scrollbar-width: none; /* Para Firefox */
+    -ms-overflow-style: none; /* Para IE y Edge */
+}
+  
+.scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Para Chrome, Safari y Opera */
+}
+
+/* Estilos para las miniaturas de imágenes */
+.thumbnail-container {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.thumbnail-container:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.thumbnail-container img {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.thumbnail-container:hover {
+    border-color: #93c5fd !important;
+    transition: border-color 0.2s ease-in-out;
+}
+
+/* Eliminar el resaltado azul en móviles */
+@media (hover: none) {
+    .thumbnail-container:active {
+        opacity: 0.8;
+    }
+}
